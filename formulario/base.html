@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--comentario em html-->
+    
+    <script>
+        //1. let é usado para variaveis que podem mudar
+        let nomeAluno = "Maria";
+        let idade = 20;
+        idade = 21; // ✅posso alterar depois
+        
+        //2. const é usado para valores fixos(constante)
+        const TAXA_JUROS = 0.05; 
+        // TAVA_JUROS = 0.10; ❌Erro! const não pode mudar 
+
+        //3. console.log(); exibindo no console (F12)
+        console.log(nomeAluno); // "Maria"
+        console.log(idade); // 21
+
+        //1. String
+        let nome = "Ana"; // aspas duplas
+        let cidade = 'São Paulo' // aspas simples
+        let mensagem = `Olá, ${nome}!`; //tamplate literal (moderno) crase
+        console.log(mensagem); // "Ola, Ana"
+        
+        //2. Number - numeros (inteiros e decimais)
+        let pontos = 100;
+        let temperatura = 36.7;
+        let saldo = -50; // pode ser negativo
+
+        //3.Boolean - verdadeiro ou falso
+        let estaLogado = true;
+        let temDesconto = false;
+
+        //4. Undefined - variável declarada mas sem valor
+        let resultado;
+        console.log(resultado); // undefined
+
+        //5. Null - ausencia intencional de valor
+        let usuarioAtivo = null;
+
+        // Descobrir o tipo de qualquer valor
+        console.log(typeof nome); //String
+        console.log(typeof pontos); // number
+        console.log(typeof estaLogado); // boolean
+
+        //--- Operadores Aritimédicos ---
+        let a = 10, b= 3;
+        
+        console.log(a + b); // 13 (adição)
+        console.log(a - b); // 7 (subtração)
+        console.log(a * b); // 30 (multiplicação)
+        console.log(a / b); // 3.33 (divisão)
+        console.log(a % b); // 1 (resto da divisão)
+        console.log(a ** b); // 1000 (potência: 10³)
+
+        // --- Operadores de Comparação ---
+        console.log(5 === 5); // true (igual em valor E tipo)
+        console.log(5 != 4); // true (diferente)
+        console.log(10 > 8); // true (maior que)
+        console.log(5 <= 5); // true menor ou igual
+
+        // --- Cuidado: == vs ===---
+        console.log(5 == '5'); // true (faz conversão automática)
+        console.log(5 === '5'); // false (mais rigoroso, prefira este! ele tem 3 =)
+
+        // --- Operadores Lógicos --
+        console.log(true && false); // false (E: ambos precisam ser true)
+        console.log(tue || false); // true: (OU: basta um ser true)
+        console.log(!true); // false(NÃO: inverte o valor) 
+
+        // --- Concatenação de Strings---
+        let primeiroNome = "João";
+        let sobrenome = "Silva";
+        let nomeCompleto = primeiroNome + " " + sobrenome;
+        console.log(nomeCompleto); // "João Silva"
+
+        // Forma moderna com template literals
+        console.log(`Nome: ${primeiroNome} ${sobrenome}`)// Nome: João Silva
+
+        // --- Forma Clássica (Function Declaration) ---
+        function saudar(nome){
+            return `Olá, ${noem}! Benvindo ao JavaScript!`
+        }
+
+        // Chamando a função
+        let mensagemm = saudar("Ana");
+        console.log(mensagemm); // "Olá, Ana" Bem-vinda ao JavaScript!"
+        console.log(saudar("Carlos")); // "Olá, Carlos! Benvindo ao JavaScropt!"
+
+        // Função com multiplos parâmetros ---
+        function calcularArea(largura, altura){
+            let area = largura * altura;
+            return area;
+        }
+
+        console.log(calcularArea(5, 3)); // 15
+        console.log(calcularArea(10, 4)); // 40
+
+        //--- Arow Funcition( forma moderna) ---
+        const dobrar = (numero) => numero * 2;
+        console.log(dobrar(7)); // 14
+
+        //Arrow function com multiplas linhas
+        const somar = (a, b) =>{
+            let resultado = a + b;
+            return resultado
+        };
+        console.log(somar(4, 6)); // 10
+
+        // --- Escopo Global vs Local
+        let name = "Global"; // visivel em todo lugar
+
+        function minhaFuncao(){
+            let lastName = "Local"; // so existe aqui dentro {}
+            console.log(name); // global(função acessa externo)
+            console.log(lastName)// local
+        }
+
+        minhaFuncao();
+        console.log(name); // global
+        // console.log(lastName); ❌Erro! sobrnome não existe aqui
+
+        //--- Escopo de Bloco (let e const) ---
+        if(true){
+            let dentroDoIf = "Só aqui";
+            console.log(dentroDoIf); // so aqui
+        }
+        //console.log(dentroDoIf); ❌Erro! fora do bloco
+
+        
+
+        
+
+        // parseInt(x) -> ele muda strig para numeor
+    </script>
+</body>
+</html>
