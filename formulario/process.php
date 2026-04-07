@@ -1,11 +1,5 @@
 <?php
-// ═══════════════════════════════════════════════
-//  CONFIGURAÇÃO — altere apenas estas 4 linhas
-// ═══════════════════════════════════════════════
-define('DB_HOST',  'localhost');
-define('DB_USER',  'root');
-define('DB_PASS',  '');
-define('DB_NAME',  'db_cadastro');
+require_once 'conexao.php';
 
 // ═══════════════════════════════════════════════
 //  PASSO 1 — Responde sempre em JSON (sem HTML)
@@ -45,8 +39,7 @@ if ($erros) {
 //  PASSO 4 — Conecta ao MySQL e cria o banco
 // ═══════════════════════════════════════════════
 try {
-    $pdo = new PDO('mysql:host=' . DB_HOST, DB_USER, DB_PASS);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   
 
     // Cria o banco de dados se ainda não existir
     $pdo->exec('CREATE DATABASE IF NOT EXISTS ' . DB_NAME . ' CHARACTER SET utf8mb4');
